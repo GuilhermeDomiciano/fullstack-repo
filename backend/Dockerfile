@@ -28,7 +28,7 @@ RUN composer install --no-scripts --no-autoloader --prefer-dist
 # Copy application files
 COPY . .
 
-RUN composer dump-autoload --optimize
+RUN composer dump-autoload --optimize --no-scripts
 
 # Create storage and bootstrap cache directories
 RUN mkdir -p /var/www/storage/framework/cache/data \
