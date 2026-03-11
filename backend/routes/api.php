@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InviteController;
+use App\Http\Controllers\WorkspaceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +25,14 @@ Route::middleware('throttle:6,1')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user',    [AuthController::class, 'user']);
+
+    // Workspaces
+    Route::get('/workspaces',                                        [WorkspaceController::class, 'index']);
+    Route::post('/workspaces',                                       [WorkspaceController::class, 'store']);
+    Route::get('/workspaces/{id}',                                   [WorkspaceController::class, 'show']);
+    Route::delete('/workspaces/{workspaceId}/members/{userId}',      [WorkspaceController::class, 'removeMember']);
+
+    // Invites
+    Route::post('/workspaces/{id}/invites',  [InviteController::class, 'store']);
+    Route::post('/invites/accept/{token}',   [InviteController::class, 'accept']);
 });
