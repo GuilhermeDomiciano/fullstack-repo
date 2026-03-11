@@ -30,10 +30,8 @@ COPY . .
 
 RUN composer dump-autoload --optimize
 
-# Create sqlite database and storage directories
-RUN mkdir -p /var/www/database \
-    && touch /var/www/database/database.sqlite \
-    && mkdir -p /var/www/storage/framework/cache/data \
+# Create storage and bootstrap cache directories
+RUN mkdir -p /var/www/storage/framework/cache/data \
     && mkdir -p /var/www/storage/framework/sessions \
     && mkdir -p /var/www/storage/framework/views \
     && mkdir -p /var/www/storage/logs \
@@ -41,15 +39,11 @@ RUN mkdir -p /var/www/database \
     && chmod -R 775 /var/www/storage \
     && chmod -R 775 /var/www/bootstrap/cache
 
-# Copy env file
-RUN cp .env.example .env
-
-# Generate application key
-RUN php artisan key:generate
-
-# Run migrations
-RUN php artisan migrate --force
+# Copy entrypoint script
+COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 8000
 
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

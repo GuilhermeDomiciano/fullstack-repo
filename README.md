@@ -7,6 +7,7 @@ A fullstack web application built with **Laravel 11** (backend) and **React + Vi
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
+- [Docker (Recommended)](#docker-recommended)
 - [Directory Structure](#directory-structure)
 - [Backend Setup (Laravel)](#backend-setup-laravel)
 - [Frontend Setup (React + Vite)](#frontend-setup-react--vite)
@@ -14,6 +15,78 @@ A fullstack web application built with **Laravel 11** (backend) and **React + Vi
 - [Authentication System](#authentication-system)
 - [API Endpoints](#api-endpoints)
 - [Troubleshooting](#troubleshooting)
+
+---
+
+## Docker (Recommended)
+
+Docker is the fastest way to run the full application stack (backend + frontend) without installing PHP, Composer, or Node.js on your machine.
+
+### Prerequisites for Docker
+
+| Tool | Minimum Version |
+|------|----------------|
+| Docker | 24.x+ |
+| Docker Compose | 2.x (plugin) |
+
+### Start all services
+
+From the repository root, run:
+
+```bash
+docker-compose up --build
+```
+
+This single command will:
+1. Build the backend image (PHP 8.2, Laravel 11) and run database migrations.
+2. Build the frontend image (Node 20 build stage, nginx serving stage).
+3. Start both containers and expose the application.
+
+Once running:
+
+| Service | URL |
+|---------|-----|
+| Frontend (React) | http://localhost:3000 |
+| Backend API (Laravel) | http://localhost:8000 |
+
+> The frontend nginx container proxies all `/api/*` requests to the backend container automatically, so no CORS configuration is needed.
+
+### Stop all services
+
+```bash
+docker-compose down
+```
+
+### Stop and remove volumes (deletes SQLite data)
+
+```bash
+docker-compose down -v
+```
+
+### Data persistence
+
+The SQLite database is stored in a named Docker volume (`sqlite_data`) and survives container restarts. To confirm:
+
+```bash
+docker-compose down   # stop
+docker-compose up -d  # restart — all data is preserved
+```
+
+### Environment variables
+
+All backend environment variables are defined directly in `docker-compose.yml` under the `backend.environment` key. Override any value there before building. The key variables are:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `APP_ENV` | `local` | Laravel environment |
+| `APP_DEBUG` | `true` | Enable debug mode |
+| `APP_URL` | `http://localhost:8000` | Backend URL |
+| `DB_CONNECTION` | `sqlite` | Database driver |
+| `FRONTEND_URL` | `http://localhost:3000` | Allowed CORS origin |
+
+### Health checks
+
+Both services include health checks. The backend is checked against `http://localhost:8000/up` (Laravel's built-in health endpoint). The frontend depends on the backend being healthy before starting.
 
 ---
 
