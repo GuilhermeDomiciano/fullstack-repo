@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function DashboardPage() {
@@ -11,9 +12,12 @@ export default function DashboardPage() {
     <div className="dashboard-page">
       <header className="dashboard-header">
         <h1 className="dashboard-brand">FusionRun</h1>
-        <button className="btn btn-outline" onClick={handleLogout}>
-          Sign out
-        </button>
+        <div className="header-actions">
+          <span className="header-user">{user?.name}</span>
+          <button className="btn btn-outline" onClick={handleLogout}>
+            Sign out
+          </button>
+        </div>
       </header>
 
       <main className="dashboard-main">
@@ -24,6 +28,9 @@ export default function DashboardPage() {
             You are authenticated. Your session is active and your token is
             stored securely in localStorage.
           </p>
+          <Link to="/workspaces" className="btn btn-outline ws-dashboard-link">
+            View my Workspaces
+          </Link>
         </div>
 
         <div className="user-details-card">
