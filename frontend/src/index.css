@@ -302,3 +302,309 @@ a:hover {
   color: var(--color-text);
   align-self: center;
 }
+
+/* -------------------------------------------------------
+   Dashboard workspace link
+------------------------------------------------------- */
+.ws-dashboard-link {
+  margin-top: 1rem;
+  width: auto;
+}
+
+/* -------------------------------------------------------
+   Header actions
+------------------------------------------------------- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-user {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------
+   Workspace list
+------------------------------------------------------- */
+.workspace-list-main {
+  max-width: 900px;
+}
+
+.ws-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.ws-list-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ws-create-btn {
+  width: auto;
+  margin-top: 0;
+}
+
+.ws-form-card {
+  background-color: var(--color-surface);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.ws-form-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.ws-empty {
+  background-color: var(--color-surface);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+.ws-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.ws-card {
+  background-color: var(--color-surface);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  border: 1.5px solid transparent;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ws-card:hover {
+  border-color: var(--color-primary);
+  text-decoration: none;
+}
+
+.ws-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ws-card-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.ws-card-desc {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.ws-card-members {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+/* -------------------------------------------------------
+   Workspace badges (role)
+------------------------------------------------------- */
+.ws-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.ws-badge-owner {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+
+.ws-badge-member {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+/* -------------------------------------------------------
+   Workspace detail
+------------------------------------------------------- */
+.ws-detail-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.ws-detail-heading h2 {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.ws-section-note {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+/* -------------------------------------------------------
+   Invite form
+------------------------------------------------------- */
+.invite-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.invite-form .form-group {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 0;
+}
+
+.invite-btn {
+  width: auto;
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.invite-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius);
+}
+
+.invite-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #166534;
+  margin-bottom: 0.5rem;
+}
+
+.invite-link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.invite-link-input {
+  flex: 1;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  outline: none;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+}
+
+.invite-expires {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  margin-top: 0.5rem;
+}
+
+/* -------------------------------------------------------
+   Members list
+------------------------------------------------------- */
+.members-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  gap: 0.75rem;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.member-email {
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+}
+
+.member-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-danger-sm {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1.5px solid #fca5a5;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-danger-sm:hover:not(:disabled) {
+  background-color: #fee2e2;
+}
+
+.btn-danger-sm:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------
+   Alert success
+------------------------------------------------------- */
+.alert-success {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}

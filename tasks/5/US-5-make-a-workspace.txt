@@ -1,0 +1,55 @@
+US-5 — Make a Workspace
+======================
+
+CONTEXTO
+--------
+O sistema necessita de separação por workspace para permitir múltiplos times/projetos isolados. Será permitido criar um workspace e convidar outros usuários para colaborar dentro dele.
+
+HISTORIA
+--------
+Como usuário,
+quero criar um workspace e convidar outras pessoas para colaborar,
+para organizar projetos isolados com acesso controlado.
+
+CRITERIOS DE ACEITACAO
+-----------------------
+1. Usuário autenticado consegue criar um novo workspace com nome e descrição
+2. Criador do workspace é automaticamente designado como owner
+3. Usuário consegue gerar link de convite ou adicionar pessoas pelo email
+4. Pessoa convidada recebe notificação (email ou sistema) com link para aceitar convite
+5. Após aceitar convite, pessoa é adicionada ao workspace como membro
+6. Workspace isolado exibe apenas dados relevantes a seus membros
+7. Owner consegue remover membros do workspace
+
+REGRAS TECNICAS
+---------------
+- Seguir convencoes do CLAUDE.md
+- Implementar separação de dados por workspace em todos os endpoints
+- Usar JWT tokens com workspace_id no payload
+- Validar acesso a workspace em middleware de autenticação
+- Sem over-engineering: usar estrutura simples de convites com tokens
+
+CRITERIOS DE TESTE (QA)
+------------------------
+API:
+  - POST /workspaces (criar workspace) retorna 201 com dados do workspace
+  - GET /workspaces (listar workspaces do usuário) retorna apenas seus workspaces
+  - POST /workspaces/:id/invites (gerar convite) retorna token válido
+  - POST /invites/accept/:token (aceitar convite) adiciona usuário ao workspace
+  - DELETE /workspaces/:id/members/:userId (remover membro) retorna 204
+  - Usuário sem acesso não consegue acessar dados de workspace alheio (403)
+
+E2E:
+  - Criar workspace com nome e descrição
+  - Copiar link de convite e compartilhar
+  - Novo usuário aceita convite e vê workspace na sua lista
+  - Owner remove membro e membro perde acesso
+  - Verificar isolamento de dados entre workspaces diferentes
+
+FORA DO ESCOPO
+--------------
+- Roles e permissões granulares (por enquanto apenas owner/member)
+- Transferência de ownership
+- Backup/restore de workspaces
+- Limite de membros por workspace
+- Analytics de uso do workspace
