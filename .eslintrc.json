@@ -1,0 +1,30 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2022": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "no-console": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["src/frontend/**/*.{js,jsx}", "tests/frontend/**/*.{js,jsx}"],
+      "env": {
+        "browser": true
+      },
+      "globals": {
+        "React": "readonly"
+      }
+    }
+  ]
+}

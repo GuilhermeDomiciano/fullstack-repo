@@ -1,0 +1,43 @@
+{
+  "name": "fusion-run",
+  "version": "1.0.0",
+  "description": "Fullstack monorepo project",
+  "main": "src/backend/index.js",
+  "scripts": {
+    "dev:backend": "node src/backend/index.js",
+    "dev:frontend": "vite",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build": "vite build",
+    "test": "jest --testPathPattern=tests/backend",
+    "test:frontend": "vitest run",
+    "test:all": "npm test && npm run test:frontend",
+    "lint": "eslint src tests",
+    "format": "prettier --write src tests"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^16.0.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "jsdom": "^24.1.0",
+    "prettier": "^3.2.5",
+    "supertest": "^6.3.4",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/backend/**/*.test.js"
+    ]
+  }
+}

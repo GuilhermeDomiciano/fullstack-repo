@@ -1,0 +1,44 @@
+.container {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  max-width: 480px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+}
+
+.healthy {
+  border-color: #4caf50;
+  background-color: #f0fff0;
+}
+
+.error {
+  border-color: #f44336;
+  background-color: #fff0f0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.list li {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list li:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 600;
+  min-width: 110px;
+}
+
+.value {
+  color: #333;
+}
