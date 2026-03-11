@@ -1,0 +1,53 @@
+US-9 — Add Docker
+======================
+
+CONTEXTO
+--------
+O projeto necessita de containerização para facilitar a implantação e execução em múltiplos ambientes. Atualmente, a configuração do projeto requer instalação manual de dependências (backend, frontend e banco de dados). O Docker permitirá que o projeto inteiro execute com um único comando, eliminando problemas de compatibilidade e variações de ambiente.
+
+HISTORIA
+--------
+Como desenvolvedor ou operador,
+quero executar o projeto inteiro (backend, frontend e banco de dados) através do Docker,
+para eliminar a necessidade de configurações manuais e garantir consistência entre ambientes.
+
+CRITERIOS DE ACEITACAO
+-----------------------
+1. Um arquivo Dockerfile deve estar presente na raiz do projeto
+2. Um arquivo docker-compose.yml deve orquestrar backend, frontend e database
+3. O comando "docker-compose up" deve iniciar todos os serviços sem erros
+4. Todos os serviços devem estar acessíveis conforme esperado após o start
+5. Volumes devem estar configurados para persistência de dados (banco de dados)
+6. As variáveis de ambiente devem estar corretamente mapeadas entre containers
+7. A documentação deve incluir instruções claras para usar Docker (README atualizado)
+
+REGRAS TECNICAS
+---------------
+- Usar docker-compose v3+ para orquestração de containers
+- Definir as imagens base apropriadas (node para backend/frontend, postgres/mysql para database)
+- Mapear portas corretamente para evitar conflitos
+- Usar .dockerignore para excluir arquivos desnecessários
+- Implementar health checks para validar disponibilidade dos serviços
+- Seguir as convencoes do projeto (CLAUDE.md)
+
+CRITERIOS DE TESTE (QA)
+------------------------
+API:
+  - Verificar que a API backend está respondendo corretamente em http://localhost:PORT
+  - Validar que o banco de dados está acessível a partir do container backend
+  - Testar persistência de dados: reiniciar containers e verificar que os dados permanecem
+
+E2E:
+  - Executar "docker-compose up" em máquina limpa e validar que toda aplicação funciona
+  - Acessar a aplicação frontend e verificar comunicação com backend
+  - Testar operações CRUD completas através da interface (frontend + API + database)
+  - Executar "docker-compose down" e verificar cleanup apropriado de recursos
+  - Executar "docker-compose up" novamente para validar que containers reinicializam corretamente
+
+FORA DO ESCOPO
+--------------
+- Otimizações avançadas de performance em containers
+- Implementação de Kubernetes
+- CI/CD automation para build de imagens Docker
+- Publicação de imagens em registros (Docker Hub, etc)
+- Configuração de SSL/TLS
