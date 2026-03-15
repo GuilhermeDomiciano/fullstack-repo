@@ -1,0 +1,37 @@
+US-17 — Fix hino do flamengo
+=============================
+
+CONTEXTO
+--------
+O arquivo flamengo.md contem uma versao incorreta do hino do Flamengo, possivelmente gerada por alucinacao de IA. E necessario pesquisar uma fonte confiavel e atualizar o conteudo com o texto correto do hino.
+
+HISTORIA
+--------
+Como usuario,
+quero que o arquivo flamengo.md contenha o hino correto do Flamengo,
+para ter informacoes precisas e confiavel sobre o hino da instituicao.
+
+CRITERIOS DE ACEITACAO
+-----------------------
+1. O arquivo flamengo.md contem o texto completo e correto do hino do Flamengo
+2. A fonte utilizada para o hino e de uma organizacao oficial ou reconhecida
+3. O conteudo foi validado e nao contém erros de digitacao
+
+REGRAS TECNICAS
+---------------
+- Pesquisar fontes confiáveis (site oficial do Flamengo, bases de dados de hinários, etc.)
+- Atualizar apenas a seção do hino no arquivo flamengo.md
+- Manter a formatação existente do arquivo
+
+CRITERIOS DE TESTE (QA)
+------------------------
+Validação:
+  - Confirmar que o hino agora esta correto no arquivo flamengo.md
+  - Comparar com fonte oficial do Flamengo
+  - Verificar ausência de erros de digitação e acentuação
+
+FORA DO ESCOPO
+--------------
+- Modificar outras seções do arquivo flamengo.md
+- Adicionar novas informacoes sobre historia do Flamengo
+- Alterar estrutura ou formatacao do documento
