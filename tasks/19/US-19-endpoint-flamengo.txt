@@ -1,0 +1,45 @@
+US-19 — Endpoint flamengo
+=========================
+
+CONTEXTO
+--------
+O usuario deseja consumir o hino do Flamengo atraves de um endpoint backend e visualizar a letra na tela frontend de forma simples e clara.
+
+HISTORIA
+--------
+Como usuario,
+quero acessar um endpoint que retorna o hino do Flamengo,
+para visualizar a letra do hino na interface frontend.
+
+CRITERIOS DE ACEITACAO
+-----------------------
+1. Backend deve expor um endpoint GET que retorna o hino do Flamengo em formato JSON
+2. Resposta deve conter a letra completa do hino
+3. Frontend deve consumir o endpoint e exibir o hino na tela
+4. Interface deve ser clara e legivel
+5. Endpoint deve estar documentado e acessivel
+
+REGRAS TECNICAS
+---------------
+- Seguir convencoes do CLAUDE.md
+- Endpoint RESTful
+- Resposta em JSON
+- Frontend deve fazer requisicao HTTP ao endpoint
+
+CRITERIOS DE TESTE (QA)
+------------------------
+API:
+  - Validar que GET /endpoint retorna status 200
+  - Validar que resposta contem a letra completa do hino
+  - Validar formato JSON da resposta
+
+E2E:
+  - Acessar a pagina frontend
+  - Verificar que o hino esta sendo exibido corretamente
+  - Validar que a letra esta completa e formatada
+
+FORA DO ESCOPO
+--------------
+- Autenticacao no endpoint
+- Multiplos idiomas do hino
+- Busca ou filtro de trechos
