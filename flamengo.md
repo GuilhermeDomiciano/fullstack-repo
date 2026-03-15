@@ -1,16 +1,27 @@
 # Hino do Flamengo
 
-Uma vez Flamengo, Flamengo sempre,
-Até morrer do meu peito este amor não sai.
-As glórias que os teus filhos te conquistaram,
-Com muito orgulho e carinho te consagrai.
+*Composição: Lamartine Babo*
 
-Tradição de fé e de vitórias,
-Que o teu passado nos impõe.
-Em cada jogo és o rei das multidões,
-És o mais querido, és o maior.
+Uma vez Flamengo,
+Sempre Flamengo,
+Flamengo sempre eu hei de ser.
 
-Flamengo, teu nome é uma glória,
-Que reluz no esporte nacional.
-Rubronegro, teu pendão querido,
-Salve! Salve! O Mengão imortal.
+É o meu maior prazer vê-lo brilhar,
+Seja na terra, seja no mar,
+Vencer, vencer, vencer.
+
+Uma vez Flamengo,
+Flamengo até morrer.
+
+Na regata ele me mata,
+Me maltrata, me arrebata,
+Que emoção no coração.
+Consagrado no gramado,
+Sempre amado, o mais cotado,
+No Fla-Flu é o "Ai, Jesus!"
+
+Eu teria um desgosto profundo
+Se faltasse o Flamengo no mundo.
+Ele vibra, ele é fibra,
+Muita libra já pesou.
+Flamengo até morrer eu sou.
