@@ -1,0 +1,38 @@
+US-15 — flamengo.md
+====================
+
+CONTEXTO
+--------
+O projeto necessita de um arquivo de documento que contenha o hino do Flamengo como string para referência cultural e memória do clube.
+
+HISTORIA
+--------
+Como desenvolvedor,
+quero criar um arquivo flamengo.md com o hino do Flamengo,
+para ter uma referência do hino disponível no repositório.
+
+CRITERIOS DE ACEITACAO
+----------------------
+1. Arquivo flamengo.md deve existir na raiz do projeto
+2. O arquivo deve conter o hino do Flamengo como string
+3. O arquivo deve estar em formato markdown (.md)
+4. O conteúdo do hino deve ser completo e preciso
+
+REGRAS TECNICAS
+---------------
+- Arquivo deve estar em formato markdown válido
+- Usar sintaxe markdown apropriada para formatação
+- Seguir convencoes do CLAUDE.md
+- Sem over-engineering
+
+CRITERIOS DE TESTE (QA)
+------------------------
+Manual:
+  - Verificar se o arquivo flamengo.md existe
+  - Verificar se o arquivo contém o hino do Flamengo completo
+  - Validar se o markdown está bem formatado
+
+FORA DO ESCOPO
+--------------
+- Não adicionar metadados ou informações extras além do hino
+- Não criar múltiplas versões do arquivo
