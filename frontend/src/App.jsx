@@ -7,6 +7,7 @@ import DashboardPage from './pages/DashboardPage';
 import WorkspacesPage from './pages/WorkspacesPage';
 import WorkspacePage from './pages/WorkspacePage';
 import AcceptInvitePage from './pages/AcceptInvitePage';
+import HinoFlamengoPage from './pages/HinoFlamengoPage';
 
 export default function App() {
   return (
@@ -50,6 +51,15 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <AcceptInvitePage />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/hino/flamengo"
+            element={
+              <ProtectedRoute>
+                <HinoFlamengoPage />
               </ProtectedRoute>
             }
           />
