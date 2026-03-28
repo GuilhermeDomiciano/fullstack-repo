@@ -7,6 +7,7 @@ import DashboardPage from './pages/DashboardPage';
 import WorkspacesPage from './pages/WorkspacesPage';
 import WorkspacePage from './pages/WorkspacePage';
 import AcceptInvitePage from './pages/AcceptInvitePage';
+import FlamengoPage from './pages/FlamengoPage';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           {/* Public routes */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/flamengo" element={<FlamengoPage />} />
 
           {/* Protected routes */}
           <Route
