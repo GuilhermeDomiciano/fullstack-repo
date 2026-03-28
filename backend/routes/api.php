@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FlamengoAnthemController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\WorkspaceController;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | brute-force attacks (throttle: 6 attempts per minute per IP).
 |
 */
+
+// Public cultural content routes
+Route::get('/flamengo-anthem', [FlamengoAnthemController::class, 'show']);
 
 // Public authentication routes
 Route::middleware('throttle:6,1')->group(function () {
