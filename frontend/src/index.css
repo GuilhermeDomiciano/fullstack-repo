@@ -608,3 +608,48 @@ a:hover {
   border: 1px solid #bbf7d0;
   color: #166534;
 }
+
+/* -------------------------------------------------------
+   Flamengo Anthem page
+------------------------------------------------------- */
+.anthem-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.anthem-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.anthem-lyrics {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  white-space: pre-line;
+  background-color: var(--color-surface);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+}
+
+.anthem-loading {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1rem;
+  margin-top: 3rem;
+}
+
+.anthem-error {
+  text-align: center;
+  color: var(--color-error-text);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  margin-top: 3rem;
+}
